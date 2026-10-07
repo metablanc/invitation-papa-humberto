@@ -53,6 +53,9 @@ img{max-width:100%}
 
 .page{max-width:1320px;margin:0 auto;display:grid;grid-template-areas:"entete" "scene" "panneau";gap:6px;
   padding-inline:16px;padding-block:calc(env(safe-area-inset-top,0px) + 20px) calc(env(safe-area-inset-bottom,0px) + 44px)}
+@supports (overflow:clip){.page{overflow-x:clip}}
+@supports not (overflow:clip){.page{overflow-x:hidden}}
+.entete,.panneau{position:relative;z-index:2}
 @media (min-width:980px){
   .page{grid-template-columns:minmax(0,400px) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"entete scene" "panneau scene";column-gap:56px;row-gap:30px;padding-inline:44px;padding-block:52px}
   .scene{position:sticky;top:24px;align-self:start;height:calc(100vh - 48px);min-height:640px}
@@ -69,17 +72,20 @@ img{max-width:100%}
 
 /* ---------- Scène 3D ---------- */
 .scene{grid-area:scene;position:relative;display:grid;place-items:center;perspective:1050px;perspective-origin:50% 38%;
-  padding-block:34px 58px;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  padding-block:clamp(70px,22vw,120px) 58px;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 @media (min-width:980px){.scene{perspective:1800px;padding-block:20px 40px}}
-#poussiere{position:absolute;left:-16px;top:-4%;width:calc(100% + 32px);height:108%;pointer-events:none}
+#poussiere{position:absolute;left:-16px;top:0;width:calc(100% + 32px);height:100%;pointer-events:none}
 .sol{position:absolute;left:14%;right:14%;bottom:18px;height:40px;border-radius:50%;pointer-events:none;
   background:radial-gradient(closest-side,rgba(0,0,0,.62),rgba(0,0,0,0));animation:sol 6.5s ease-in-out 1.9s infinite}
 @media (min-width:980px){.sol{bottom:8%}}
 .monde{position:relative;width:min(100%,800px);transform-style:preserve-3d;will-change:transform}
 .nonante{position:absolute;left:50%;top:50%;margin:0;pointer-events:none;white-space:nowrap;
-  font:italic 400 calc(1700 * var(--u,0.3px))/1 var(--f-serif);letter-spacing:-.04em;
-  color:rgba(201,161,79,.05);-webkit-text-stroke:calc(4 * var(--u,0.3px)) rgba(214,176,96,.42);
-  transform:translate(-52%,-56%) translateZ(-460px);animation:nonante 2.4s cubic-bezier(.2,.8,.2,1) .25s both}
+  font:italic 400 calc(2300 * var(--u,0.3px))/1 var(--f-serif);letter-spacing:-.04em;
+  color:rgba(201,161,79,.06);-webkit-text-stroke:calc(4 * var(--u,0.3px)) rgba(222,186,108,.55);
+  transform:translate(-51%,-66%) translateZ(-320px);animation:nonante 2.4s cubic-bezier(.2,.8,.2,1) .25s both}
+.halo{position:absolute;left:-22%;right:-22%;top:-30%;bottom:-30%;pointer-events:none;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(222,186,108,.34),rgba(222,186,108,.12) 48%,rgba(222,186,108,0) 72%);
+  transform:translateZ(-160px);animation:halo 6.5s ease-in-out 1.9s infinite}
 .entree{transform-style:preserve-3d;animation:entree 1.7s cubic-bezier(.16,1,.3,1) .15s both}
 .flotte{transform-style:preserve-3d;animation:flotte 6.5s ease-in-out 1.9s infinite}
 .carte{position:relative;width:100%;aspect-ratio:4/3;transform-style:preserve-3d;cursor:grab}
@@ -187,7 +193,8 @@ img{max-width:100%}
   100%{opacity:1;transform:none}}
 @keyframes flotte{0%,100%{transform:translateY(0) rotateZ(-.7deg)}50%{transform:translateY(-16px) rotateZ(.7deg)}}
 @keyframes sol{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(.84);opacity:.55}}
-@keyframes nonante{0%{opacity:0;transform:translate(-52%,-56%) translateZ(-900px) rotateZ(-8deg)}100%{opacity:1;transform:translate(-52%,-56%) translateZ(-460px)}}
+@keyframes nonante{0%{opacity:0;transform:translate(-51%,-66%) translateZ(-900px) rotateZ(-8deg)}100%{opacity:1;transform:translate(-51%,-66%) translateZ(-320px)}}
+@keyframes halo{0%,100%{opacity:.7;transform:translateZ(-160px) scale(.96)}50%{opacity:1;transform:translateZ(-160px) scale(1.04)}}
 @keyframes decolle{0%{transform:translateZ(0)}100%{transform:translateZ(calc(150 * var(--u,0.3px)))}}
 @keyframes ombre{0%{opacity:0}100%{opacity:1}}
 @keyframes bob{0%,100%{transform:translateZ(0) rotateZ(0) rotateY(0)}33%{transform:translateZ(calc(18 * var(--u,0.3px))) rotateZ(.8deg) rotateY(-3deg)}66%{transform:translateZ(calc(-8 * var(--u,0.3px))) rotateZ(-.6deg) rotateY(2deg)}}
@@ -207,7 +214,7 @@ img{max-width:100%}
 @keyframes reflet-titre{0%,60%{background-position:100% 0}90%,100%{background-position:0 0}}
 
 @media (prefers-reduced-motion:reduce){
-  .entete,.panneau>*,.entree,.flotte,.sol,.nonante,.photo,.photo-bob,.ombre,.entete h1,.btn-or::after{animation:none!important}
+  .entete,.panneau>*,.entree,.flotte,.sol,.nonante,.halo,.photo,.photo-bob,.ombre,.entete h1,.btn-or::after{animation:none!important}
   .ombre{opacity:1}
   .carte.vole,.carte.boing{animation:none}
   .btn{transition:none}
@@ -228,6 +235,7 @@ img{max-width:100%}
     <div class="sol" aria-hidden="true"></div>
     <div class="monde" id="monde">
       <p class="nonante" aria-hidden="true">90</p>
+      <div class="halo" aria-hidden="true"></div>
       <div class="entree">
         <div class="flotte">
           <div class="carte" id="carte" role="img" aria-label="Invitation avec le nom de l'invité">
