@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Invitation · 90 ans de Papa Humberto Ilunga</title>
+<meta name="description" content="Invitation aux 90 ans de Papa Humberto Ilunga, samedi 10 octobre 2026, à sa résidence.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b1424">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Invitation · 90 ans de Papa Humberto Ilunga">
+<meta property="og:description" content="Samedi 10 octobre 2026, à sa résidence. Écrivez le nom de l'invité et envoyez l'invitation sur WhatsApp.">
+<meta property="og:image" content="https://metablanc.github.io/invitation-papa-humberto/img/apercu.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2a44'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='34' text-anchor='middle' fill='%23d9b45f'%3E90%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/dejavu-sans-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/carte.jpg" as="image">
+<link rel="preload" href="img/photo.jpg" as="image">
+<style>
+/* Mise en page : une scène de nuit où la carte flotte en 3D.
+   Téléphone : en-tête, carte, commandes, empilés. Ordinateur : commandes à gauche, scène à droite.
+   Couleurs et polices reprises de l'invitation : bleu nuit de « Papa Humberto Ilunga », or des filets, papier crème. */
+@font-face{font-family:"DV Sans";src:url(fonts/dejavu-sans.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"DV Sans";src:url(fonts/dejavu-sans-bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"DV Serif";src:url(fonts/dejavu-serif-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+:root{
+  --nuit:#0b1424;
+  --nuit-2:#172a49;
+  --surface:#13213a;
+  --ligne:rgba(201,161,79,.32);
+  --or:#c9a14f;
+  --or-clair:#ecd393;
+  --or-fonce:#7d5a20;
+  --creme:#f3ead9;
+  --creme-doux:#b9ae99;
+  --papier:#f8f3ed;
+  --encre:#1b2a44;
+  --ok:#93d6b0;
+  --alerte:#f4a593;
+  --f-sans:"DV Sans","DejaVu Sans",Verdana,system-ui,sans-serif;
+  --f-serif:"DV Serif","DejaVu Serif",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--nuit)}
+body{margin:0;min-height:100vh;background:var(--nuit);color:var(--creme);font:16px/1.55 var(--f-sans);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(90% 70% at 68% 34%,var(--nuit-2) 0%,rgba(23,42,73,0) 70%),radial-gradient(60% 50% at 10% 100%,rgba(201,161,79,.10),rgba(201,161,79,0) 70%),var(--nuit)}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+.page{max-width:1320px;margin:0 auto;display:grid;grid-template-areas:"entete" "scene" "panneau";gap:6px;
+  padding-inline:16px;padding-block:calc(env(safe-area-inset-top,0px) + 20px) calc(env(safe-area-inset-bottom,0px) + 44px)}
+@media (min-width:980px){
+  .page{grid-template-columns:minmax(0,400px) minmax(0,1fr);grid-template-rows:auto 1fr;grid-template-areas:"entete scene" "panneau scene";column-gap:56px;row-gap:30px;padding-inline:44px;padding-block:52px}
+  .scene{position:sticky;top:24px;align-self:start;height:calc(100vh - 48px);min-height:640px}
+}
+
+/* ---------- En-tête ---------- */
+.entete{grid-area:entete;display:grid;gap:6px;animation:monte .8s cubic-bezier(.2,.8,.2,1) .2s both}
+.surtitre{margin:0;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--or)}
+.entete h1{margin:0;font:700 clamp(28px,7.4vw,46px)/1.06 var(--f-sans);letter-spacing:-.005em;text-wrap:balance;
+  background:linear-gradient(100deg,var(--creme) 0%,var(--creme) 42%,var(--or-clair) 50%,var(--creme) 58%,var(--creme) 100%);background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:reflet-titre 7s ease-in-out 2.2s infinite}
+.entete .sous{margin:0;font:italic 400 clamp(19px,4.6vw,24px)/1.25 var(--f-serif);color:var(--or)}
+.entete .lieu{margin:4px 0 0;font-size:14px;color:var(--creme-doux)}
+
+/* ---------- Scène 3D ---------- */
+.scene{grid-area:scene;position:relative;display:grid;place-items:center;perspective:1050px;perspective-origin:50% 38%;
+  padding-block:34px 58px;touch-action:pan-y;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+@media (min-width:980px){.scene{perspective:1800px;padding-block:20px 40px}}
+#poussiere{position:absolute;left:-16px;top:-4%;width:calc(100% + 32px);height:108%;pointer-events:none}
+.sol{position:absolute;left:14%;right:14%;bottom:18px;height:40px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(0,0,0,.62),rgba(0,0,0,0));animation:sol 6.5s ease-in-out 1.9s infinite}
+@media (min-width:980px){.sol{bottom:8%}}
+.monde{position:relative;width:min(100%,800px);transform-style:preserve-3d;will-change:transform}
+.nonante{position:absolute;left:50%;top:50%;margin:0;pointer-events:none;white-space:nowrap;
+  font:italic 400 calc(1700 * var(--u,0.3px))/1 var(--f-serif);letter-spacing:-.04em;
+  color:rgba(201,161,79,.05);-webkit-text-stroke:calc(4 * var(--u,0.3px)) rgba(214,176,96,.42);
+  transform:translate(-52%,-56%) translateZ(-460px);animation:nonante 2.4s cubic-bezier(.2,.8,.2,1) .25s both}
+.entree{transform-style:preserve-3d;animation:entree 1.7s cubic-bezier(.16,1,.3,1) .15s both}
+.flotte{transform-style:preserve-3d;animation:flotte 6.5s ease-in-out 1.9s infinite}
+.carte{position:relative;width:100%;aspect-ratio:4/3;transform-style:preserve-3d;cursor:grab}
+.carte.vole{animation:vole 1.25s cubic-bezier(.5,.05,.2,1)}
+.carte.boing{animation:boing .55s cubic-bezier(.3,1.6,.5,1)}
+
+.recto,.verso,.tranche{position:absolute;inset:0;border-radius:calc(12 * var(--u,0.3px))}
+.recto,.verso{overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.recto{background:var(--papier);transform:translateZ(3px);box-shadow:0 calc(50 * var(--u,0.3px)) calc(90 * var(--u,0.3px)) -10px rgba(0,0,0,.6)}
+.recto .fond{position:absolute;inset:0;width:100%;height:100%;display:block;max-width:none}
+.tranche{background:#e7dccb}
+.tranche.t1{transform:translateZ(1.5px);background:#efe5d6}
+.tranche.t2{transform:translateZ(0)}
+.tranche.t3{transform:translateZ(-1.5px);background:#d8c9b1}
+.verso{transform:rotateY(180deg) translateZ(3px);background:radial-gradient(80% 70% at 50% 40%,#22365a 0%,var(--encre) 60%,#121d31 100%);display:grid;place-items:center}
+.verso-cadre{position:absolute;inset:calc(60 * var(--u,0.3px));border:calc(4 * var(--u,0.3px)) solid var(--or);border-radius:calc(6 * var(--u,0.3px));
+  box-shadow:inset 0 0 0 calc(14 * var(--u,0.3px)) transparent,inset 0 0 0 calc(17 * var(--u,0.3px)) rgba(201,161,79,.55);display:grid;place-content:center;justify-items:center;gap:calc(14 * var(--u,0.3px));text-align:center}
+.verso-90{font:italic 400 calc(470 * var(--u,0.3px))/0.95 var(--f-serif);color:var(--or-clair);
+  background:linear-gradient(180deg,#f5e2a8,#c9a14f 60%,#9b7631);-webkit-background-clip:text;background-clip:text;color:transparent}
+.verso-nom{font:700 calc(62 * var(--u,0.3px))/1.1 var(--f-sans);color:var(--creme);letter-spacing:.02em}
+.verso-mot{font:italic 400 calc(44 * var(--u,0.3px))/1.2 var(--f-serif);color:var(--or)}
+
+.ombre{position:absolute;left:calc(900 * var(--u,0.3px));top:calc(100 * var(--u,0.3px));width:calc(650 * var(--u,0.3px));height:calc(1000 * var(--u,0.3px));
+  background:rgba(14,20,34,.5);filter:blur(calc(26 * var(--u,0.3px)));border-radius:calc(10 * var(--u,0.3px));animation:ombre 1.3s ease 1.3s both;will-change:transform}
+.reflet{position:absolute;left:-50%;top:-50%;width:200%;height:200%;pointer-events:none;will-change:transform;
+  background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.30) 0%,rgba(255,248,230,.10) 18%,rgba(255,255,255,0) 38%)}
+.balai{position:absolute;inset:0;pointer-events:none;transform:translateX(-120%);
+  background:linear-gradient(105deg,rgba(255,240,200,0) 38%,rgba(255,236,190,.55) 50%,rgba(255,240,200,0) 62%)}
+.balai.passe{animation:balai 1.5s cubic-bezier(.4,0,.2,1)}
+
+.photo{position:absolute;left:calc(900 * var(--u,0.3px));top:calc(100 * var(--u,0.3px));width:calc(650 * var(--u,0.3px));height:calc(1000 * var(--u,0.3px));
+  transform-style:preserve-3d;transform:translateZ(calc(150 * var(--u,0.3px)));animation:decolle 1.3s cubic-bezier(.2,.9,.25,1.12) 1.3s both}
+.photo-bob{position:absolute;inset:0;transform-style:preserve-3d;animation:bob 5.4s ease-in-out 2.7s infinite}
+.photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block;object-fit:cover;-webkit-backface-visibility:hidden;backface-visibility:hidden;
+  border-radius:calc(3 * var(--u,0.3px));box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+
+.calque-nom{position:absolute;inset:0;pointer-events:none;transform:translateZ(calc(26 * var(--u,0.3px)));-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.cadre-lueur{position:absolute;left:calc(100 * var(--u,0.3px));top:calc(550 * var(--u,0.3px));width:calc(701 * var(--u,0.3px));height:calc(76 * var(--u,0.3px));
+  border-radius:calc(9 * var(--u,0.3px));box-shadow:0 0 calc(26 * var(--u,0.3px)) calc(4 * var(--u,0.3px)) rgba(236,211,147,.85);opacity:0}
+.cadre-lueur.pulse{animation:lueur .9s ease-out}
+.nom-carte,.nom-exemple{position:absolute;white-space:nowrap;line-height:1.164}
+.nom-carte{font-weight:700;font-family:var(--f-sans);color:var(--encre)}
+.nom-carte.brille{background:linear-gradient(100deg,var(--encre) 0%,var(--encre) 40%,#c9a14f 50%,var(--encre) 60%,var(--encre) 100%);background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:brille .8s ease-out}
+.nom-exemple{font-weight:400;font-family:var(--f-sans);color:#706d66}
+.nom-carte.apparait{animation:apparait .45s cubic-bezier(.2,1.4,.4,1)}
+
+.astuce{position:absolute;bottom:0;left:0;right:0;margin:0;text-align:center;font-size:13px;color:var(--creme-doux);transition:opacity .6s ease}
+.astuce.cache{opacity:0}
+
+/* ---------- Panneau de commandes ---------- */
+.panneau{grid-area:panneau;display:grid;gap:18px;align-content:start;min-width:0}
+.panneau>*{animation:monte .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0) * 90ms + 1.1s)}
+.champ{display:grid;gap:9px}
+.champ label{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--or)}
+.saisie{position:relative}
+.saisie input{width:100%;min-height:60px;padding:14px 56px 14px 18px;border-radius:14px;border:2px solid var(--ligne);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02)),var(--surface);color:var(--creme);font:700 21px/1.2 var(--f-sans);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.35);transition:border-color .25s ease,box-shadow .25s ease}
+.saisie input::placeholder{color:rgba(185,174,153,.55)}
+.saisie input:focus{outline:none;border-color:var(--or);box-shadow:inset 0 2px 10px rgba(0,0,0,.35),0 0 0 4px rgba(201,161,79,.22),0 0 28px rgba(201,161,79,.25)}
+.effacer{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:10px;background:transparent;color:var(--creme-doux);font-size:28px;line-height:1;cursor:pointer}
+.effacer:hover{background:rgba(255,255,255,.07);color:var(--creme)}
+.effacer:focus-visible{outline:3px solid rgba(201,161,79,.6)}
+
+.actions{display:grid;gap:14px}
+.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:11px;min-height:58px;padding:14px 20px;border-radius:15px;
+  font:700 17px/1.2 var(--f-sans);letter-spacing:.01em;cursor:pointer;border:0;transform:translateY(0);
+  transition:transform .14s ease,box-shadow .14s ease,filter .2s ease;-webkit-tap-highlight-color:transparent}
+.btn svg{width:23px;height:23px;flex:none;position:relative;z-index:1}
+.btn span{position:relative;z-index:1}
+.btn-or{color:#1a2438;background:linear-gradient(180deg,#f3dc9f 0%,#d9b45f 48%,#b98d3d 100%);
+  box-shadow:0 6px 0 var(--or-fonce),0 16px 26px -6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-or::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-60%;transform:skewX(-20deg);
+  background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));animation:eclat 3.6s ease-in-out 2.4s infinite}
+.btn-clair{color:var(--creme);background:linear-gradient(180deg,#203253,#17253f);
+  box-shadow:0 6px 0 #0a1220,0 14px 24px -8px rgba(0,0,0,.6),inset 0 0 0 1.5px rgba(201,161,79,.45)}
+.btn:hover:not(:disabled){transform:translateY(-2px)}
+.btn-or:hover:not(:disabled){box-shadow:0 8px 0 var(--or-fonce),0 20px 30px -6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-clair:hover:not(:disabled){box-shadow:0 8px 0 #0a1220,0 18px 28px -8px rgba(0,0,0,.6),inset 0 0 0 1.5px rgba(201,161,79,.7)}
+.btn:active:not(:disabled){transform:translateY(5px)}
+.btn-or:active:not(:disabled){box-shadow:0 1px 0 var(--or-fonce),0 6px 12px -6px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-clair:active:not(:disabled){box-shadow:0 1px 0 #0a1220,0 6px 12px -8px rgba(0,0,0,.6),inset 0 0 0 1.5px rgba(201,161,79,.7)}
+.btn:disabled{cursor:not-allowed;filter:saturate(.35) brightness(.72)}
+.btn:disabled::after{animation:none;opacity:0}
+.btn:focus-visible{outline:3px solid var(--or-clair);outline-offset:4px}
+.onde{position:absolute;border-radius:50%;pointer-events:none;transform:scale(0);background:rgba(255,255,255,.45);animation:onde .65s ease-out forwards}
+
+.etat{margin:2px 0 0;min-height:1.55em;font-size:15px;color:var(--creme-doux)}
+.etat[data-ton="ok"]{color:var(--ok)}
+.etat[data-ton="alerte"]{color:var(--alerte)}
+
+.etapes{padding:18px 20px;border-radius:16px;background:rgba(19,33,58,.72);border:1px solid var(--ligne);display:grid;gap:8px}
+.etapes h2{margin:0 0 2px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--or)}
+.etapes ol{margin:0;padding-left:22px;display:grid;gap:7px;font-size:15px;color:var(--creme)}
+.etapes ol li::marker{color:var(--or);font-weight:700}
+.lien-wa{font-size:15px;color:var(--or-clair);text-underline-offset:3px}
+
+#confettis{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+/* ---------- Animations ---------- */
+@keyframes entree{
+  0%{opacity:0;transform:translateY(46vh) translateZ(-420px) rotateX(68deg) rotateZ(-12deg)}
+  35%{opacity:1}
+  100%{opacity:1;transform:none}}
+@keyframes flotte{0%,100%{transform:translateY(0) rotateZ(-.7deg)}50%{transform:translateY(-16px) rotateZ(.7deg)}}
+@keyframes sol{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(.84);opacity:.55}}
+@keyframes nonante{0%{opacity:0;transform:translate(-52%,-56%) translateZ(-900px) rotateZ(-8deg)}100%{opacity:1;transform:translate(-52%,-56%) translateZ(-460px)}}
+@keyframes decolle{0%{transform:translateZ(0)}100%{transform:translateZ(calc(150 * var(--u,0.3px)))}}
+@keyframes ombre{0%{opacity:0}100%{opacity:1}}
+@keyframes bob{0%,100%{transform:translateZ(0) rotateZ(0) rotateY(0)}33%{transform:translateZ(calc(18 * var(--u,0.3px))) rotateZ(.8deg) rotateY(-3deg)}66%{transform:translateZ(calc(-8 * var(--u,0.3px))) rotateZ(-.6deg) rotateY(2deg)}}
+@keyframes vole{
+  0%{transform:none}
+  18%{transform:translateZ(-60px) scale(.94) rotateY(0)}
+  60%{transform:translateZ(-30px) scale(.96) rotateY(200deg)}
+  100%{transform:rotateY(360deg)}}
+@keyframes boing{0%{transform:scale(1)}40%{transform:scale(.95) translateZ(-30px)}100%{transform:scale(1)}}
+@keyframes balai{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes lueur{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+@keyframes brille{0%{background-position:100% 0}100%{background-position:0 0}}
+@keyframes apparait{0%{opacity:0;transform:translateY(calc(18 * var(--u,0.3px))) scale(.92)}100%{opacity:1;transform:none}}
+@keyframes monte{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+@keyframes eclat{0%,55%{left:-60%}85%,100%{left:130%}}
+@keyframes onde{to{transform:scale(1);opacity:0}}
+@keyframes reflet-titre{0%,60%{background-position:100% 0}90%,100%{background-position:0 0}}
+
+@media (prefers-reduced-motion:reduce){
+  .entete,.panneau>*,.entree,.flotte,.sol,.nonante,.photo,.photo-bob,.ombre,.entete h1,.btn-or::after{animation:none!important}
+  .ombre{opacity:1}
+  .carte.vole,.carte.boing{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="entete">
+    <p class="surtitre">Invitation électronique</p>
+    <h1>Papa Humberto Ilunga</h1>
+    <p class="sous">90e anniversaire</p>
+    <p class="lieu">Samedi 10 octobre 2026 · à sa résidence, avenue Tshela n° 18</p>
+  </header>
+
+  <section class="scene" id="scene" aria-label="Aperçu de l'invitation en relief">
+    <canvas id="poussiere" aria-hidden="true"></canvas>
+    <div class="sol" aria-hidden="true"></div>
+    <div class="monde" id="monde">
+      <p class="nonante" aria-hidden="true">90</p>
+      <div class="entree">
+        <div class="flotte">
+          <div class="carte" id="carte" role="img" aria-label="Invitation avec le nom de l'invité">
+            <div class="tranche t1"></div>
+            <div class="tranche t2"></div>
+            <div class="tranche t3"></div>
+            <div class="verso" aria-hidden="true">
+              <div class="verso-cadre">
+                <div class="verso-90">90</div>
+                <div class="verso-nom">Papa Humberto Ilunga</div>
+                <div class="verso-mot">Avec toute notre affection</div>
+              </div>
+            </div>
+            <div class="recto">
+              <img class="fond" src="img/carte.jpg" alt="" width="1600" height="1200" draggable="false">
+              <div class="ombre" id="ombre"></div>
+              <div class="reflet" id="reflet"></div>
+              <div class="balai" id="balai"></div>
+            </div>
+            <div class="calque-nom">
+              <div class="cadre-lueur" id="lueur"></div>
+              <span class="nom-exemple" id="nom-exemple">[Nom de l’invité(e)]</span>
+              <span class="nom-carte" id="nom-carte" hidden></span>
+            </div>
+            <div class="photo">
+              <div class="photo-bob"><img src="img/photo.jpg" alt="" width="650" height="1000" draggable="false"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="astuce" id="astuce">Faites glisser la carte du doigt</p>
+  </section>
+
+  <section class="panneau" aria-label="Préparer et envoyer l'invitation">
+    <form class="champ" id="formulaire" autocomplete="off" style="--i:0">
+      <label for="nom">Nom de l'invité(e)</label>
+      <div class="saisie">
+        <input id="nom" name="nom" type="text" maxlength="60" placeholder="Ex. : Tonton Jean-Pierre" autocapitalize="words" spellcheck="false" enterkeyhint="send">
+        <button type="button" class="effacer" id="effacer" aria-label="Effacer le nom" hidden>&times;</button>
+      </div>
+    </form>
+
+    <div class="actions" style="--i:1">
+      <button type="button" class="btn btn-or" id="btn-partager" hidden disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.9 2.6 4.3 4.6 4.7l1.2-1.2 1.7.8"/></svg>
+        <span>Envoyer sur WhatsApp</span>
+      </button>
+      <button type="button" class="btn btn-or" id="btn-copier" hidden disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>Copier l'image</span>
+      </button>
+      <button type="button" class="btn btn-clair" id="btn-enregistrer" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        <span>Enregistrer l'image</span>
+      </button>
+      <p class="etat" id="etat" role="status" aria-live="polite">Écrivez un nom pour préparer l'invitation.</p>
+    </div>
+
+    <div class="etapes" style="--i:2">
+      <h2>Pour envoyer</h2>
+      <ol id="etapes"></ol>
+      <a class="lien-wa" id="lien-wa" href="https://web.whatsapp.com/" target="_blank" rel="noopener" hidden>Ouvrir WhatsApp Web</a>
+    </div>
+  </section>
+</main>
+<canvas id="confettis" aria-hidden="true"></canvas>
+
+<script>
+(function(){
+  "use strict";
+
+  // ===== Géométrie de l'invitation (pixels de l'image 1600 x 1200) =====
+  var W = 1600, H = 1200;
+  var PHOTO = {x:900, y:100, w:650, h:1000};
+  var NOM = {x:126, centre:587.5, largeurMax:654, taille:40, tailleMin:20};
+  var EXEMPLE = {x:125, base:599, taille:33.5};
+  var ASC = 0.928;                  // hauteur de jambage haut de DejaVu Sans (en em)
+  var CAP = 0.729;                  // hauteur des capitales de DejaVu Sans (en em)
+  var ENCRE = "#1b2a44";
+  var POLICE = '"DV Sans","DejaVu Sans",Verdana,sans-serif';
+
+  var $ = function(id){ return document.getElementById(id); };
+  var scene = $("scene"), monde = $("monde"), carte = $("carte"), ombre = $("ombre"), reflet = $("reflet"), balai = $("balai");
+  var lueur = $("lueur"), nomCarte = $("nom-carte"), nomExemple = $("nom-exemple"), astuce = $("astuce");
+  var champ = $("nom"), btnEffacer = $("effacer"), btnPartager = $("btn-partager"), btnCopier = $("btn-copier"), btnEnregistrer = $("btn-enregistrer");
+  var etat = $("etat"), etapes = $("etapes"), lienWa = $("lien-wa");
+
+  var calme = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var tactile = !!(window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+  var partage = false;
+  if (navigator.canShare) {
+    try { partage = navigator.canShare({files:[new File([new Blob(["x"],{type:"image/jpeg"})],"test.jpg",{type:"image/jpeg"})]}); } catch (e) { partage = false; }
+  }
+  var copie = !tactile && !!(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write);
+
+  // ===== Échelle de la carte : 1 unité = 1 pixel de l'image d'origine =====
+  var u = 0.3;
+  function mesurerCarte(){
+    if (!carte.offsetWidth) return;
+    u = carte.offsetWidth / W;
+    scene.style.setProperty("--u", u + "px");
+    placerNom();
+    taillerPoussiere();
+  }
+  if (window.ResizeObserver) new ResizeObserver(mesurerCarte).observe(carte);
+  window.addEventListener("resize", mesurerCarte);
+
+  // ===== Images et police prêtes =====
+  function charger(src){
+    return new Promise(function(ok, ko){ var i = new Image(); i.onload = function(){ ok(i); }; i.onerror = ko; i.src = src; });
+  }
+  var imgCarte = charger("img/carte.jpg"), imgPhoto = charger("img/photo.jpg");
+  var police = (document.fonts && document.fonts.load)
+    ? Promise.race([Promise.all([document.fonts.load('700 40px "DV Sans"'), document.fonts.load('400 34px "DV Sans"')]), new Promise(function(r){ setTimeout(r, 3000); })]).catch(function(){})
+    : Promise.resolve();
+  var pret = Promise.all([imgCarte, imgPhoto, police]);
+
+  var mesure = document.createElement("canvas").getContext("2d");
+  function tailleNom(nom){
+    var t = NOM.taille;
+    mesure.font = "700 " + t + "px " + POLICE;
+    while (mesure.measureText(nom).width > NOM.largeurMax && t > NOM.tailleMin) { t -= 1; mesure.font = "700 " + t + "px " + POLICE; }
+    return t;
+  }
+  function nettoyer(s){ return s.replace(/\s+/g, " ").trim(); }
+
+  // ===== Le nom sur la carte en relief =====
+  var nomAffiche = "";
+  function placerNom(){
+    nomExemple.style.left = (EXEMPLE.x * u) + "px";
+    nomExemple.style.top = ((EXEMPLE.base - ASC * EXEMPLE.taille) * u) + "px";
+    nomExemple.style.fontSize = (EXEMPLE.taille * u) + "px";
+    if (!nomAffiche) return;
+    var t = tailleNom(nomAffiche);
+    var base = NOM.centre + t * CAP / 2;
+    nomCarte.style.left = (NOM.x * u) + "px";
+    nomCarte.style.top = ((base - ASC * t) * u) + "px";
+    nomCarte.style.fontSize = (t * u) + "px";
+  }
+  function relancer(el, classe){ el.classList.remove(classe); void el.offsetWidth; el.classList.add(classe); }
+  function afficherNom(nom){
+    var etaitVide = !nomAffiche;
+    nomAffiche = nom;
+    nomExemple.hidden = !!nom;
+    nomCarte.hidden = !nom;
+    nomCarte.textContent = nom;
+    placerNom();
+    if (!nom || calme) return;
+    relancer(lueur, "pulse");
+    nomCarte.classList.remove("apparait", "brille");
+    relancer(nomCarte, etaitVide ? "apparait" : "brille");
+  }
+
+  // ===== L'image envoyée : carte + photo + nom, en 1600 x 1200 =====
+  var toile = document.createElement("canvas"); toile.width = W; toile.height = H;
+  var ctx = toile.getContext("2d");
+  function dessiner(nom, images){
+    ctx.drawImage(images[0], 0, 0, W, H);
+    ctx.drawImage(images[1], PHOTO.x, PHOTO.y, PHOTO.w, PHOTO.h);
+    if (!nom) return;
+    var t = tailleNom(nom);
+    ctx.font = "700 " + t + "px " + POLICE;
+    ctx.fillStyle = ENCRE;
+    ctx.textBaseline = "alphabetic";
+    ctx.save(); ctx.beginPath(); ctx.rect(106, 557, 689, 62); ctx.clip();
+    ctx.fillText(nom, NOM.x, NOM.centre + t * CAP / 2);
+    ctx.restore();
+  }
+  function enBlob(type, q){
+    return new Promise(function(ok, ko){ toile.toBlob(function(b){ if (b) ok(b); else ko(new Error("vide")); }, type, q); });
+  }
+  function nomFichier(nom){
+    return "Invitation 90 ans - " + nom.replace(/[\\\/:*?"<>|]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 80) + ".jpg";
+  }
+  var prepare = {nom:null, fichier:null};
+  function preparer(nom){
+    if (prepare.nom === nom && prepare.fichier) return Promise.resolve(prepare.fichier);
+    return pret.then(function(images){
+      dessiner(nom, images);
+      return enBlob("image/jpeg", 0.92);
+    }).then(function(b){
+      var f = new File([b], nomFichier(nom), {type:"image/jpeg"});
+      if (nettoyer(champ.value) === nom) prepare = {nom:nom, fichier:f};
+      return f;
+    });
+  }
+
+  // ===== Interface =====
+  function dire(texte, ton){ etat.textContent = texte; if (ton) etat.setAttribute("data-ton", ton); else etat.removeAttribute("data-ton"); }
+  function majEtapes(){
+    var li = ["Écrivez le nom de l'invité(e) : il apparaît sur la carte."];
+    if (tactile && partage) {
+      li.push("Touchez « Envoyer sur WhatsApp ».");
+      li.push("Choisissez WhatsApp, puis la personne ou le groupe, et envoyez.");
+    } else if (tactile) {
+      li.push("Touchez « Enregistrer l'image ».");
+      li.push("Dans WhatsApp, ouvrez la discussion, touchez le trombone puis Galerie et choisissez l'image.");
+    } else if (copie) {
+      li.push("Cliquez sur « Copier l'image ».");
+      li.push("Dans WhatsApp (application ou WhatsApp Web), ouvrez la discussion, collez avec Ctrl+V, puis envoyez.");
+    } else {
+      li.push("Cliquez sur « Enregistrer l'image ».");
+      li.push("Dans WhatsApp, ouvrez la discussion et glissez l'image dedans, puis envoyez.");
+    }
+    li.push("Pour l'invité suivant, effacez le nom et recommencez.");
+    etapes.textContent = "";
+    li.forEach(function(t){ var e = document.createElement("li"); e.textContent = t; etapes.appendChild(e); });
+  }
+  function majInterface(){
+    var nom = nettoyer(champ.value);
+    btnPartager.hidden = !(tactile && partage);
+    btnCopier.hidden = !copie;
+    var seul = btnPartager.hidden && btnCopier.hidden;
+    btnEnregistrer.classList.toggle("btn-or", seul);
+    btnEnregistrer.classList.toggle("btn-clair", !seul);
+    [btnPartager, btnCopier, btnEnregistrer].forEach(function(b){ b.disabled = !nom; });
+    btnEffacer.hidden = !champ.value;
+    lienWa.hidden = tactile;
+    carte.setAttribute("aria-label", nom ? "Invitation au nom de " + nom : "Invitation, nom de l'invité à écrire");
+    majEtapes();
+  }
+
+  var minuterie = null;
+  champ.addEventListener("input", function(){
+    var nom = nettoyer(champ.value);
+    majInterface();
+    if (nom !== nomAffiche) afficherNom(nom);
+    clearTimeout(minuterie);
+    if (!nom) { dire("Écrivez un nom pour préparer l'invitation."); return; }
+    dire("Invitation prête pour " + nom + ".");
+    minuterie = setTimeout(function(){ preparer(nom).catch(function(){ dire("L'image n'a pas pu être préparée. Rechargez la page.", "alerte"); }); }, 160);
+  });
+  $("formulaire").addEventListener("submit", function(e){
+    e.preventDefault();
+    var b = [btnPartager, btnCopier, btnEnregistrer].filter(function(x){ return !x.hidden && !x.disabled; })[0];
+    if (b) b.click();
+  });
+  btnEffacer.addEventListener("click", function(){ champ.value = ""; champ.dispatchEvent(new Event("input")); champ.focus(); });
+  function suivant(){ champ.focus(); champ.select(); }
+
+  // onde dorée sous le doigt
+  document.querySelectorAll(".btn").forEach(function(b){
+    b.addEventListener("pointerdown", function(e){
+      if (b.disabled || calme) return;
+      var r = b.getBoundingClientRect(), d = Math.max(r.width, r.height) * 2.2, o = document.createElement("span");
+      o.className = "onde"; o.style.width = o.style.height = d + "px";
+      o.style.left = (e.clientX - r.left - d / 2) + "px"; o.style.top = (e.clientY - r.top - d / 2) + "px";
+      b.appendChild(o); setTimeout(function(){ o.remove(); }, 700);
+    });
+  });
+
+  function fete(){
+    if (calme) return;
+    relancer(carte, "vole");
+    relancer(balai, "passe");
+    var r = carte.getBoundingClientRect();
+    lancerConfettis(r.left + r.width / 2, r.top + r.height * 0.45);
+  }
+
+  btnPartager.addEventListener("click", function(){
+    var nom = nettoyer(champ.value); if (!nom) return;
+    var envoi = (prepare.nom === nom && prepare.fichier)
+      ? navigator.share({files:[prepare.fichier]})                      // appel direct : le geste du doigt est encore valable
+      : preparer(nom).then(function(f){ return navigator.share({files:[f]}); });
+    envoi.then(function(){
+      dire("Invitation de " + nom + " envoyée. Écrivez le nom suivant.", "ok");
+      fete(); suivant();
+    }).catch(function(err){
+      if (err && err.name === "AbortError") { dire("Envoi annulé : l'invitation de " + nom + " n'est pas partie."); return; }
+      if (err && err.name === "NotAllowedError") { dire("Touchez encore « Envoyer sur WhatsApp » : l'image est prête maintenant.", "alerte"); return; }
+      partage = false; majInterface();
+      dire("L'envoi direct ne marche pas sur ce téléphone. Utilisez « Enregistrer l'image ».", "alerte");
+    });
+  });
+
+  btnCopier.addEventListener("click", function(){
+    var nom = nettoyer(champ.value); if (!nom) return;
+    var png = pret.then(function(images){ dessiner(nom, images); return enBlob("image/png"); });
+    var ecrit;
+    try { ecrit = navigator.clipboard.write([new ClipboardItem({"image/png": png})]); } catch (e) { ecrit = Promise.reject(e); }
+    ecrit.then(function(){
+      dire("Image de " + nom + " copiée. Dans WhatsApp, ouvrez la discussion et collez avec Ctrl+V.", "ok");
+      fete(); suivant();
+    }).catch(function(){
+      copie = false; majInterface();
+      dire("Ce navigateur refuse de copier une image. Utilisez « Enregistrer l'image ».", "alerte");
+    });
+  });
+
+  btnEnregistrer.addEventListener("click", function(){
+    var nom = nettoyer(champ.value); if (!nom) return;
+    preparer(nom).then(function(f){
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(f); a.download = f.name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 5000);
+      dire(tactile
+        ? "Image de " + nom + " enregistrée. Dans WhatsApp : trombone, Galerie, puis l'image."
+        : "Image de " + nom + " enregistrée. Glissez-la dans la discussion WhatsApp.", "ok");
+      fete(); suivant();
+    }).catch(function(){ dire("L'image n'a pas pu être enregistrée. Rechargez la page.", "alerte"); });
+  });
+
+  // ===== Mouvement 3D : souris, doigt, gyroscope, ou balancement tranquille =====
+  var cible = {x:0, y:0}, cour = {x:0, y:0};
+  var derniereMain = -1e9, dernierGyro = -1e9, glisse = null, base = null;
+  function borne(v, a){ return v < -a ? -a : (v > a ? a : v); }
+  window.addEventListener("pointermove", function(e){
+    if (e.pointerType !== "mouse" || calme) return;
+    var r = scene.getBoundingClientRect();
+    var nx = borne((e.clientX - (r.left + r.width / 2)) / (r.width / 2), 1.4);
+    var ny = borne((e.clientY - (r.top + r.height / 2)) / (r.height / 2), 1.4);
+    cible.y = nx * 15; cible.x = -ny * 10; derniereMain = performance.now();
+  }, {passive:true});
+  scene.addEventListener("pointerdown", function(e){
+    if (e.pointerType === "mouse" || calme) return;
+    glisse = {x:e.clientX, y:e.clientY, ry:cour.y, rx:cour.x};
+  });
+  scene.addEventListener("pointermove", function(e){
+    if (!glisse) return;
+    cible.y = borne(glisse.ry + (e.clientX - glisse.x) * 0.32, 34);
+    cible.x = borne(glisse.rx - (e.clientY - glisse.y) * 0.12, 14);
+    derniereMain = performance.now();
+    astuce.classList.add("cache");
+  });
+  function lacher(){ glisse = null; }
+  scene.addEventListener("pointerup", lacher);
+  scene.addEventListener("pointercancel", lacher);
+  carte.addEventListener("click", function(){ if (!calme) relancer(carte, "boing"); });
+
+  window.addEventListener("deviceorientation", function(e){
+    if (calme || e.beta == null || e.gamma == null) return;
+    if (!base) base = {b:e.beta, g:e.gamma};
+    base.b += (e.beta - base.b) * 0.004; base.g += (e.gamma - base.g) * 0.004;   // recentre doucement
+    if (glisse) return;
+    cible.x = borne((e.beta - base.b) * -0.5, 12);
+    cible.y = borne((e.gamma - base.g) * 0.6, 16);
+    dernierGyro = performance.now();
+  });
+
+  // ===== Poussière d'or =====
+  var pc = $("poussiere"), px = pc.getContext("2d"), grains = [], dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  function taillerPoussiere(){
+    var r = pc.getBoundingClientRect();
+    pc.width = Math.max(1, Math.round(r.width * dpr)); pc.height = Math.max(1, Math.round(r.height * dpr));
+    if (!grains.length) {
+      var n = calme ? 0 : (tactile ? 34 : 64);
+      for (var i = 0; i < n; i++) grains.push(nouveauGrain(true));
+    }
+  }
+  function nouveauGrain(partout){
+    return {x:Math.random(), y:partout ? Math.random() : 1.05, r:0.6 + Math.random() * 2.1, v:0.00006 + Math.random() * 0.00016,
+            p:Math.random() * 6.28, f:0.6 + Math.random() * 1.6, z:0.3 + Math.random() * 1.2};
+  }
+  function dessinerPoussiere(t, dt){
+    var w = pc.width, h = pc.height;
+    px.clearRect(0, 0, w, h);
+    for (var i = 0; i < grains.length; i++) {
+      var g = grains[i];
+      g.y -= g.v * dt; g.x += Math.sin(t * 0.0004 + g.p) * 0.00003 * dt;
+      if (g.y < -0.05) grains[i] = g = nouveauGrain(false);
+      var a = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(t * 0.002 * g.f + g.p));
+      var X = g.x * w + cour.y * g.z * 2.2 * dpr, Y = g.y * h - cour.x * g.z * 2.2 * dpr;
+      px.beginPath(); px.arc(X, Y, g.r * dpr, 0, 6.2832);
+      px.fillStyle = "rgba(236,211,147," + a.toFixed(3) + ")"; px.fill();
+    }
+  }
+
+  // ===== Confettis =====
+  var cc = $("confettis"), cx = cc.getContext("2d"), morceaux = [], couleurs = ["#ecd393", "#c9a14f", "#f8f3ed", "#e0b86a", "#fff4d6"];
+  function lancerConfettis(x, y){
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    cc.width = innerWidth * d; cc.height = innerHeight * d; cx.setTransform(d, 0, 0, d, 0, 0);
+    var n = tactile ? 110 : 170;
+    for (var i = 0; i < n; i++) {
+      var ang = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 1.1, vit = 6 + Math.random() * 11;
+      morceaux.push({x:x, y:y, vx:Math.cos(ang) * vit, vy:Math.sin(ang) * vit - 2, l:5 + Math.random() * 7, h:8 + Math.random() * 9,
+                     r:Math.random() * 6.28, vr:(Math.random() - 0.5) * 0.35, c:couleurs[i % couleurs.length], vie:0, rond:Math.random() < 0.25});
+    }
+  }
+  function dessinerConfettis(dt){
+    if (!morceaux.length) return;
+    var k = dt / 16.67;
+    cx.clearRect(0, 0, innerWidth, innerHeight);
+    for (var i = morceaux.length - 1; i >= 0; i--) {
+      var m = morceaux[i];
+      m.vie += dt; m.vy += 0.32 * k; m.vx *= Math.pow(0.985, k); m.vy *= Math.pow(0.99, k);
+      m.x += m.vx * k; m.y += m.vy * k; m.r += m.vr * k;
+      var a = m.vie > 1700 ? Math.max(0, 1 - (m.vie - 1700) / 700) : 1;
+      if (a <= 0 || m.y > innerHeight + 40) { morceaux.splice(i, 1); continue; }
+      cx.save(); cx.globalAlpha = a; cx.translate(m.x, m.y); cx.rotate(m.r); cx.fillStyle = m.c;
+      if (m.rond) { cx.beginPath(); cx.arc(0, 0, m.l * 0.45, 0, 6.2832); cx.fill(); }
+      else { cx.scale(1, Math.cos(m.vie * 0.012 + m.r)); cx.fillRect(-m.l / 2, -m.h / 2, m.l, m.h); }
+      cx.restore();
+    }
+    if (!morceaux.length) cx.clearRect(0, 0, innerWidth, innerHeight);
+  }
+
+  // ===== Boucle d'animation =====
+  var avant = performance.now();
+  function image(t){
+    var dt = Math.min(64, t - avant); avant = t;
+    if (!calme) {
+      var main = t - derniereMain < 2600, gyro = t - dernierGyro < 900;
+      if (!main && !gyro && !glisse) { cible.x = 5 * Math.sin(t / 2300); cible.y = 9 * Math.sin(t / 3100); }
+      var k = 1 - Math.pow(1 - (glisse ? 0.22 : 0.075), dt / 16.67);
+      cour.x += (cible.x - cour.x) * k; cour.y += (cible.y - cour.y) * k;
+      monde.style.transform = "rotateX(" + cour.x.toFixed(2) + "deg) rotateY(" + cour.y.toFixed(2) + "deg)";
+      ombre.style.transform = "translate(" + ((18 + cour.y * 2.2) * u).toFixed(1) + "px," + ((26 - cour.x * 2.2) * u).toFixed(1) + "px)";
+      reflet.style.transform = "translate(" + (-cour.y * 2.4).toFixed(2) + "%," + (cour.x * 2.8).toFixed(2) + "%)";
+      dessinerPoussiere(t, dt);
+    }
+    dessinerConfettis(dt);
+    requestAnimationFrame(image);
+  }
+
+  // ===== Démarrage =====
+  if (!tactile || calme) astuce.hidden = true;
+  else setTimeout(function(){ astuce.classList.add("cache"); }, 7000);
+  majInterface();
+  mesurerCarte();
+  police.then(placerNom);
+  if (!calme) setTimeout(function(){ relancer(balai, "passe"); }, 2700);
+  requestAnimationFrame(image);
+})();
+</script>
+</body>
+</html>
